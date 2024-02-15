@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY 3 JAVASCRIPT</title>
+</head>
+<body>
+    <h2>GUESS THE NUMBER</h2>
+    <div>NUMBER OF ATTEMPTS: <span id="attemptsspace">5</span></div><br>
+    <label>ENTER YOUR WILD GUESS</label>
+    <input type="text" id="inputguess">
+    <button id="thetry">TRY!</button>
+    <br><br>
+    <div>RESULT: <span id="theresultspan"></span></div>
+
+    <script type="application/javascript">
+
+        const guessedNumber = 25;
+        let attempts = 5; 
+
+        document.getElementById('thetry').addEventListener('click',function(){
+          const theinputvalue = document.getElementById('inputguess').value;
+           
+            if(attempts == 0)
+            {
+                document.getElementById('theresultspan').innerHTML = `SORRY YOUR ATTEMPTS IS EMPTY! GAME OVER! REFRESH TO START AGAIN!`;
+            }
+
+            else 
+            {
+                if(theinputvalue == guessedNumber)
+                {
+                    document.getElementById('theresultspan').innerHTML = `"Congratulations! You guessed the correct number: <strong>${guessedNumber}</strong>with <strong>${attempts}</strong> attempts!`;
+                }
+
+                else if(theinputvalue < guessedNumber)
+                {
+                    document.getElementById('theresultspan').innerHTML = `TOO LOW! Try Again!`;
+                }
+
+                else if(theinputvalue > guessedNumber)
+                {
+                    document.getElementById('theresultspan').innerHTML = `TOO HIGH! Try Again!`;
+                }
+
+                attempts--;
+                document.getElementById('attemptsspace').innerHTML = attempts;
+
+                if(attempts == 0)
+                {
+                    document.getElementById('theresultspan').innerHTML = `SORRY YOUR ATTEMPTS IS EMPTY! GAME OVER! REFRESH TO START AGAIN!`;
+                }
+
+            }
+
+
+
+        });
+
+
+    </script>
+</body>
+</html>

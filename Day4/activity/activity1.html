@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT ACTIVITY 1</title>
+</head>
+<body>
+
+    <input type="text" id="gradeinput">
+    <div>GRADE CETEGORY: <span id="grade_category_space"></span></div>
+    <button id="thebutton">CALCULATE</button>
+
+
+
+
+    <script type="application/ecmascript">
+
+        
+        document.getElementById('thebutton').addEventListener("click", function() {
+            const thegradeinput = document.getElementById('gradeinput').value; 
+      
+        if (thegradeinput >= 90) {
+            
+            document.getElementById('grade_category_space').innerHTML = `A`;
+        }
+        else if(thegradeinput >= 80 && thegradeinput <= 89)
+        {
+            document.getElementById('grade_category_space').innerHTML = `B`;
+        }
+        else if(thegradeinput >= 70 && thegradeinput <= 79)
+        {
+            document.getElementById('grade_category_space').innerHTML = `C`;
+        }
+
+        else if(thegradeinput >= 60 && thegradeinput <= 69)
+        {
+            document.getElementById('grade_category_space').innerHTML = `D`;
+        }
+
+        else if(thegradeinput < 60)
+        {
+            document.getElementById('grade_category_space').innerHTML = `F`;
+        }
+
+        else 
+        {
+            
+            document.getElementById('grade_category_space').innerHTML = `INVALID NUMBER`;
+        }
+          
+});
+        
+    </script>
+</body>
+</html>

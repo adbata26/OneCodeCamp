@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVSCRIPT ACTIVITY 2</title>
+</head>
+<body>
+    <label>Starter</label>
+    <input type="text" id="starter">
+    <label>Ender</label>
+    <input type="text" id="ender">
+    <button id="loopit">LOOP</button>
+    <div>The Results</div>
+    <div id="results"></div>
+    <script type="application/javascript">
+
+        document.getElementById('loopit').addEventListener('click',function(){
+            document.getElementById('results').innerHTML = '';
+               const starter = document.getElementById('starter').value;
+               const ender = document.getElementById('ender').value; 
+
+               const trueender = parseInt(ender) + 1;
+               for(i=starter; i<trueender; i++)
+               {
+                 document.getElementById('results').innerHTML += i+'<br>';
+               }
+        });
+    </script>
+
+
+</body>
+</html>
