@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY 8</title>
+</head>
+<body>
+
+<script class="application/javascript">
+function multiply(array,callback)
+{
+    let thenewarray = [];   
+    array.forEach(individual => {
+      let x = callback(individual);
+      thenewarray.push(x);
+    });
+    document.write(thenewarray);
+}
+
+function compute(thenum)
+{
+    return thenum * 2;
+}
+
+multiply([10,20,30,40,50],compute);
+</script>    
+</body>
+</html>

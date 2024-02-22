@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity 8</title>
+</head>
+<body>
+<script>
+    class Person
+    {
+        constructor(name,age)
+        {
+            this.name = name; 
+            this.age = age; 
+        }
+
+        greet()
+        {
+            document.write(`Hello ${this.name}, you are ${this.age}`);
+        }
+    }
+
+    let person = new Person("allen",28);
+    person.greet();
+</script>
+</body>
+</html>

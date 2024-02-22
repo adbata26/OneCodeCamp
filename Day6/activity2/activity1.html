@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY 1</title>
+</head>
+<body>
+<div id="thespacetooutput"></div>
+    <script type="application/javascript">
+           
+
+// CALLBACK
+/*
+function displayrandomnum(callback,counter)
+{
+
+    setTimeout(() => {
+        const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+        let therandomgetter = random(0,100);
+
+                document.getElementById('thespacetooutput').innerHTML += `<div>2 seconds have lapsed.</div>
+                <div>
+                Random number generated is ${therandomgetter}.
+                </div><br>`;   
+                if(therandomgetter < 85)
+                {
+                    if(counter != 10)
+                    { 
+                        counter++
+                        callback(displayrandomnum,counter);
+                    }
+                    else
+                    {
+                        document.getElementById('thespacetooutput').innerHTML += `<div>No Turns Left!
+                </div>`;   
+                    }
+              
+                }
+                else 
+                {
+                    document.getElementById('thespacetooutput').innerHTML += `
+                        It's 85 above
+                </div>`;  
+                }
+               
+           }, 2000); 
+}
+       
+displayrandomnum(displayrandomnum,1);
+*/ 
+
+// Promise
+/*
+function displayrandomnum(counter) {
+  return new Promise((resolve, reject) => {
+    
+    setTimeout(() => {
+        const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+        let therandomgetter = random(0,10);
+
+                document.getElementById('thespacetooutput').innerHTML += `<div>2 seconds have lapsed.</div>
+                <div>
+                Random number generated is ${therandomgetter}.
+                </div><br>`;   
+                if(therandomgetter < 85)
+                {
+                    if(counter != 10)
+                    { 
+                        counter++
+                        resolve(counter)
+                    }
+                    else
+                    {
+                        document.getElementById('thespacetooutput').innerHTML += `<div>No Turns Left!
+                        </div>`; 
+                        reject();
+                      
+                    }
+              
+                }
+                else 
+                {
+                    document.getElementById('thespacetooutput').innerHTML += `
+                        It's 85 above
+                </div>`;  
+                reject();
+                }
+               
+           }, 2000); 
+
+  });
+}
+
+function repeatfunction(call,counter)
+{
+    call(counter)
+  .then((result) => {
+    return repeatfunction(displayrandomnum,result);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+repeatfunction(displayrandomnum,1)
+
+
+// Asyn await
+function displayrandomnum(counter) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+        let therandomgetter = random(0,100);
+                document.getElementById('thespacetooutput').innerHTML += `<div>2 seconds have lapsed.</div>
+                <div>
+                Random number generated is ${therandomgetter}.
+                </div><br>`;
+                
+                if(therandomgetter < 85)
+                { 
+                    if(counter != 10)
+                    {
+                        counter++;
+                        resolve(counter);
+                    }
+                    else 
+                    {
+                        reject("NO TURN LEFT!");
+                    }
+                }
+                else 
+                {
+                    reject("It's 85 above!");
+                }
+           }, 2000); 
+  });
+}
+
+async function reapeatingcode(counter) {
+  try {
+    const result = await displayrandomnum(counter);
+    return reapeatingcode(result);
+  } 
+  catch (error) 
+  { 
+       document.getElementById('thespacetooutput').innerHTML += error   
+  }
+}
+
+reapeatingcode(1);
+*/
+
+
+
+function displayrandomnum(counter) {
+  return new Promise((resolve, reject) => {
+    
+    setTimeout(() => {
+        const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+        let therandomgetter = random(0,10);
+
+                document.getElementById('thespacetooutput').innerHTML += `<div>2 seconds have lapsed.</div>
+                <div>
+                Random number generated is ${therandomgetter}.
+                </div><br>`;   
+                if(therandomgetter < 85)
+                {
+                    if(counter != 10)
+                    { 
+                        counter++
+                        resolve(counter)
+                    }
+                    else
+                    {
+                        document.getElementById('thespacetooutput').innerHTML += `<div>No Turns Left!
+                        </div>`; 
+                        reject();
+                      
+                    }
+              
+                }
+                else 
+                {
+                    document.getElementById('thespacetooutput').innerHTML += `
+                        It's 85 above
+                </div>`;  
+                reject();
+                }
+               
+           }, 2000); 
+
+  });
+}
+
+function repeatfunction(call,counter)
+{
+    call(counter)
+  .then((result) => {
+    return repeatfunction(displayrandomnum,result);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+repeatfunction(displayrandomnum,1);
+
+    </script>
+</body>
+</html>

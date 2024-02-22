@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity 6</title>
+</head>
+<body>
+    <script type="application/javascript">
+        function mathOperation(fnum,snum,operation)
+        {
+            return operation(fnum,snum);
+        }
+
+        let add = mathOperation(20,10,function(x,y){return x+y;}); 
+        document.write(add+'<br>');
+
+
+        let sub = mathOperation(20,10,function(x,y){return x-y;}); 
+        document.write(sub+'<br>');
+        let pro = mathOperation(20,10,function(x,y){return x*y;}); 
+        document.write(pro+'<br>');
+        let div = mathOperation(20,10,function(x,y){return x/y;}); 
+        document.write(div+'<br>');
+    </script>
+</body>
+</html>

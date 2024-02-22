@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9</title>
+</head>
+<body>
+<script>
+    class Student
+    {
+        constructor(studentid)
+        {
+            this.studentid = studentid;
+        }
+        greet()
+        {
+            document.write(`Hello ${this.studentid}`);
+        }
+    }
+
+    let student = new Student(1232);
+    student.greet();
+
+</script>    
+</body>
+</html>

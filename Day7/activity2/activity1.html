@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPPING CART OOP</title>
+</head>
+<body>
+<script>
+class Item
+{
+    constructor(name,price,stock)
+    {
+        this.name = name; 
+        this.price = price; 
+        this.stock = stock; 
+        this.sold = 0; 
+    }
+
+    logDetails()
+    {
+        document.write(`<br>
+            <div>Name: ${this.name}</div>
+            <div>Price: ${this.price}</div>
+            <div>Stock: ${this.stock}</div>
+            <div>Sold: ${this.sold}</div>
+        `);
+    }
+
+    buying()
+    {
+        if(this.stock == 0)
+        {
+            document.write("<div>Not Enough Stock!</div>");
+        }
+        else 
+        {
+            document.write("<div>Buying</div>");
+            this.sold++; 
+            this.stock--;
+        }
+ 
+    }
+
+    return()
+    {
+      if(this.stock == 0)
+      {
+        document.write("<div>Returning</div>");
+        this.sold--;
+        this.stock++;
+      }
+
+      else 
+      {
+        document.write("<div>You Did not buy that here!</div>");
+      }
+        
+    }
+}    
+
+
+/*
+const firstitem = new Item("Zonrox",50,4);
+firstitem.buying();
+firstitem.buying();
+firstitem.buying();
+firstitem.return();
+firstitem.logDetails();
+
+
+const seconditem = new Item("Tide",100,7);
+seconditem.buying();
+seconditem.buying();
+seconditem.return();
+seconditem.return();
+seconditem.logDetails();
+
+
+const thirditem = new Item("Ariel",25,8);
+
+thirditem.return();
+thirditem.return();
+thirditem.return();
+thirditem.logDetails();
+*/
+
+</script>
+</body>
+</html>

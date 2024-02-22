@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+<body>
+<script>    
+    // Generate a random number between 1 and 10.   
+    let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+    // Guess what the random generated number is
+    let guess = 10;
+
+    // Check if the user's input is a valid number
+    if(typeof guess === 'number')
+    {
+            // Check if the guess is correct  
+        if(randomNumber == guess)
+        {
+            document.write('CORRECT');
+        }
+        else 
+        {
+            document.write('Wrong');
+        }
+    }  
+
+
+</script> 
+</body>
+</html>

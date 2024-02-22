@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity 2</title>
+</head>
+<body>
+    <label>Input time</label>
+    <input type="text" id="theinput">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <div>Minutes: <span id="min"></span>:<span id="sec"></span></div>
+    <script type="application/javascript">
+    let x;
+    let theinput;
+   
+        document.getElementById('start').addEventListener('click',function(){
+             theinput = document.getElementById('theinput').value;
+
+            if(theinput > 0 && theinput < 61)
+           {
+              x = setInterval(() => starttime(), 1000);
+           }
+           else 
+           {
+            alert("please put right time 1 to 60");
+           }
+
+            
+        });
+        let thesecond = 0;
+        function starttime()
+        {
+            if(theinput == 0 && thesecond == 0)
+            {
+                clearInterval(x);
+                document.getElementById('min').innerHTML = '00';  
+                document.getElementById('sec').innerHTML = '00';
+            }
+            else 
+            {
+                    if(thesecond == 0)
+                {
+                    document.getElementById('sec').innerHTML = '00';
+                
+                        theinput--;
+                        if(theinput > -1 && theinput < 10)
+                        {
+                            document.getElementById('min').innerHTML = '0'+theinput; 
+                        }
+                        else 
+                        {
+                            document.getElementById('min').innerHTML = theinput;  
+                        }   
+                
+                }
+                else if(thesecond > 0 && thesecond < 10)
+                {
+                    document.getElementById('sec').innerHTML = '0'+thesecond;
+                }
+
+                else if(thesecond == -1)
+                {
+                    thesecond = 59;
+                    document.getElementById('sec').innerHTML = thesecond;
+                }
+                else 
+                {
+                    document.getElementById('sec').innerHTML = thesecond;
+                }
+            }
+            
+            thesecond--;
+        }
+
+
+        document.getElementById('stop').addEventListener('click',function(){
+            clearInterval(x);
+
+            theinput = 0;
+            thesecond = 0;
+            document.getElementById('min').innerHTML = '';  
+            document.getElementById('sec').innerHTML = '';
+      
+    });
+
+    </script>
+
+</body>
+</html>

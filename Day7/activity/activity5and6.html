@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity 5</title>
+</head>
+<body>
+ <script type="application/javascript">
+ class Animal 
+ {
+    constructor(name,species)
+    {
+        this.name = name;
+        this.species = species;
+    }
+        makeSound()
+        {
+            return `${this.name}, a ${this.species}, makes a sound `;
+        }
+    
+ }   
+
+class Dog extends Animal 
+{
+    makeSound(){
+        //return `${super.makeSound} AW AW`;
+        return super.makeSound() + 'Aw Aw';
+    }
+}
+
+const dog = new Dog("Bantay","Aso");
+document.write(dog.makeSound());
+ </script>   
+</body>
+</html>

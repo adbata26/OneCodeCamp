@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+</head>
+<body>
+ <script type="application/javascript">
+class House 
+{
+    constructor(location,price,lot,type)
+    {
+        this.location = location; 
+        this.price = price; 
+        this.lot = lot; 
+        this.type = type; 
+        this.show_all();
+    }
+
+    show_all()
+    {
+        let thediscount;
+        if(this.type == "Pre-selling")
+        {thediscount = 0.2;}
+        else {thediscount = 0.05;}
+        let thetotalprice = this.price * thediscount;
+
+        document.write(`
+            <div style="margin-top:30px;">Location: ${this.location}</div>
+            <div>Price: ${this.price}</div>
+            <div>Lot: ${this.lot}</div>
+            <div>Type: ${this.type}</div>
+            <div>Discount: ${thediscount}</div>
+            <div>Price: ${thetotalprice}</div>
+        `);
+    }
+}
+
+let firsthouse = new House("Tarlac",10,"1sqm", "Pre-selling");
+
+let secondhouse = new House("Tarlac",20,"1sqm", "new");
+
+let thirdhouse = new House("Tarlac",30,"1sqm", "new");
+
+
+let fourthouse = new House("Tarlac",40,"1sqm", "new");
+
+let fifthhouse = new House("Tarlac",50,"1sqm", "new");
+
+ </script>   
+</body>
+</html>

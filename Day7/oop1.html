@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP 1</title>
+</head>
+<body>
+<script type="application/javascript">
+        /*
+        Constructor class
+        class Car 
+        {
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        const myCar = new Car("Toyota",2022);
+        document.write(myCar.name);
+       
+
+        //Constructor function for creating a person object
+
+        function Person(name,age)
+        {
+            this.name = name;
+            this.age = age; 
+
+            this.greet = function(){
+                document.write(`Hello, ${this.name}, you are ${this.age}`);
+            }
+        }
+        const person1 = new Person("Joe",18);
+        person1.greet();
+         */
+
+/*
+//ENCAPSULATION  - grouping the code - the goal of encapsulation is abstraction        
+class BankAccount{
+    constructor(accountNumber, balance)
+    {
+        this.accountNumber = accountNumber;
+        this.balance = balance; 
+    }
+
+    deposit(amount)
+    {
+        this.balance += amount;
+    }
+
+    withdraw(amount) 
+    {
+        if(amount <= this.balance)
+        {
+            this.balance -= amount;
+        }
+        else 
+        {
+            document.write("<br> Insufficient balance");
+        }
+    }
+    getAccountinfo()
+    {
+        return `<br>Account number: ${this.accountNumber}, balance: ${this.balance}`;   
+    }
+}
+
+const MyAccount = new BankAccount("123123",1000);
+MyAccount.deposit(500);
+document.write(MyAccount.getAccountinfo())
+MyAccount.withdraw(2000);
+document.write(MyAccount.getAccountinfo())
+*/
+
+/*
+//Inheritance 
+class Animal 
+{
+    constructor(name)
+    {
+        this.name = name; 
+    }
+
+    eat()
+    {
+        return `${this.name} is eating`;
+    }
+}
+
+class Dog extends Animal 
+{
+    bark() 
+    {
+        return "Aw aw!";
+    }
+}
+
+const myDog = new Dog("Michael");
+document.write(myDog.eat());
+document.write(myDog.bark());
+*/
+
+// polymorphism 
+// inherting a property but doing something from it
+
+/*
+class Animal 
+{
+    makeSound()
+    {
+        return "the animal makes a noise";
+    }
+}
+
+class Dog extends Animal 
+{
+    makeSound() 
+    {
+        return super.makeSound() + ' the dog barks';
+    };
+}
+
+const myDog = new Dog();
+document.write(myDog.makeSound());
+*/
+
+//Abstraction 
+/*
+so encapsulation is organizing the code inside the class, while abstraction is identifying the methods of the class. It seems two terms created just to differentiate two features.
+*/
+class Vehicle{
+    constructor(make,model)
+    {
+        this.make = make;
+        this.model = model;
+    }
+
+    start()
+    {
+        return `${this.make} ${this.model} is starting the engine`;
+    }
+
+    stop()
+    {
+        return `${this.make} ${this.model} is stopping the engine`;
+    }
+
+}
+
+const myVehicle = new Vehicle("Toyota","Camry");
+document.write(myVehicle.start());
+</script>   
+</body>
+</html>

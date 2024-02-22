@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+</head>
+<body>
+    <input tpye="text" id="theinput">
+    <button id="thebutton">FIND</button>
+    <div style="margin-top:10px;" id="thespace"></div>
+
+    <script type="application/javascript">
+        document.getElementById('thebutton').addEventListener('click',function(){
+           const theinput = document.getElementById('theinput').value; 
+
+           const themod = theinput % 2; 
+           if(themod == 0)
+           {
+               document.getElementById('thespace').textContent = 'EVEN'; 
+           }
+           
+           else 
+           {
+            document.getElementById('thespace').textContent = 'ODD';
+           }
+
+        });
+    </script>
+</body>
+</html>

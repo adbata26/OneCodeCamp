@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activty 1 oop</title>
+</head>
+<body>
+<script type="application/javascript">
+    class Person 
+    {
+        constructor(name,age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+        introduce()
+        { 
+       
+            document.write(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+            
+        }
+    }
+
+    const person = new Person("Allen",28);
+    person.introduce();
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activty 2</title>
+</head>
+<body>
+<script type="application/javascript">
+    class Rectangle {
+        constructor(width,height)
+        {
+            this.width = width;
+            this.height = height;    
+        }
+
+        calculate_area()
+        {
+            return this.width * this.height;
+        }
+
+        calculate_perimiter()
+        {
+            return (this.width + this.height) * 2;
+        }
+    }
+
+    const therectangle = new Rectangle(200,200);
+    document.write(therectangle.calculate_area());
+
+    document.write('<br>'+therectangle.calculate_perimiter());
+</script>
+</body>
+</html>

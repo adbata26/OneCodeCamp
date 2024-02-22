@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity 7</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Activity 3</title>
+    </head>
+    <body>
+    <script type="application/javascript">
+     class Shape 
+     {
+        constructor(height,width,radius)
+        {
+            this.height = height;
+            this.width = width;
+            this.radius = radius;
+        }
+       
+     
+     }   
+    
+     class Circle extends Shape 
+     {
+        theownarea()
+        {
+            return 3.14 * this.radius;
+        }
+    
+     }
+    
+     class Rectangle extends Shape 
+     {
+        theownarea()
+        {
+            return this.width * this.height;
+        }
+    
+     }
+    
+     const circle = new Circle(0,0,30);
+     document.write(circle.theownarea()+'<br>');
+    
+    
+     const rectangle = new Rectangle(50,50,0);
+     document.write(rectangle.theownarea());
+    
+    </script> 
+    </body>
+    </html>  
+</body>
+</html>

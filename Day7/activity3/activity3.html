@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Character 
+    {
+        constructor(name)
+        {
+            this.name = name;;
+            this.health = 100;
+            this.stamina = 100;
+            this.manna = 100;
+        }
+
+        walk()
+        {
+            this.stamina--;
+        }
+
+        run()
+        {
+            this.stamina = this.stamina - 3;
+        }
+
+        showStats()
+        {
+            document.write(`<div>Name: ${this.name} </div>
+                            <div>health: ${this.health} </div>
+                            <div>stamina: ${this.stamina} </div>
+                            <div>manna: ${this.manna} </div>
+            `);
+        }
+
+       
+        
+    }
+
+   /*
+let character = new Character("SUN GOD");
+character.walk();
+character.walk();
+character.walk();
+character.run();
+character.run();
+character.showStats();
+*/
+
+class Shaman extends Character
+{ 
+    constructor(name)
+    {
+        super(name);
+        this.health = 150;
+    }
+
+    heal()
+    {
+        this.health = this.health + 5;
+        this.stamina = this.stamina + 5;
+        this.manna = this.manna + 5;
+    }
+}
+
+ /*
+let shaman = new Shaman("Shaman King");
+shaman.walk();
+shaman.walk();
+shaman.walk();
+shaman.run();
+shaman.run();
+shaman.heal();
+shaman.showStats();
+*/
+
+
+class Swordsman extends Character
+{
+    constructor(name)
+    {
+        super(name);
+        this.health = 170;
+    }
+
+    slash()
+    {
+        this.manna = this.manna - 10; 
+    }
+    showStats()
+    {
+        document.write('I am powerful!');
+        super.showStats();
+    }
+}
+
+/*
+let swordsman = new Swordsman("Sword King");
+swordsman.walk();
+swordsman.walk();
+swordsman.walk();
+swordsman.run();
+swordsman.run();
+swordsman.slash();
+swordsman.slash();
+swordsman.showStats();
+
+*/
+</script>
+</body>
+</html>

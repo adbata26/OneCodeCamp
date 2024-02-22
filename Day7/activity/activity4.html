@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script type="application/javascript">
+class BankAccount
+{
+    constructor(accountNUmber,balance)
+    {
+        this.accountNUmber = accountNUmber;
+        this.balance = balance;
+    }
+
+    deposit(amount)
+    {
+        this.balance += amount;
+    }
+
+    widthdraw(amount)
+    {
+        if(amount > this.balance)
+        {
+            document.write("<br>not enought balance");
+        }
+        else 
+        {
+            this.balance -= amount;
+        }
+     
+    }
+
+    checkbalance()
+    {
+        document.write(`<br>Account number: ${this.accountNUmber}<br> Balance: ${this.balance}`);
+    }
+}
+
+const bankdetails = new BankAccount("0001",2000);
+bankdetails.deposit(500);
+bankdetails.checkbalance();
+bankdetails.widthdraw(3000);
+bankdetails.checkbalance();
+</script>   
+</body>
+</html>
