@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM MANIPULATION</title>
+  </head>
+  <body>
+    <div id="theelement" style="background-color:red;" hidden>
+        HELLO WORLD
+    </div>
+
+
+
+    <script>
+      /*
+        const div1 = document.getElementById('division1');
+       // console.log(div1);
+
+        const first_class = document.getElementsByClassName('group1')[1];
+       // console.log(first_class);
+
+       const thetags = document.getElementsByTagName('div')[2];
+       console.log(thetags);
+*/
+        document.getElementById('theelement').innerHTML = 'ALLEN YOUNG';
+
+        document.getElementById('theelement').style = 'background-color:blue';
+
+        document.getElementById('theelement').hidden = false;
+    </script>
+  </body>
+</html>
